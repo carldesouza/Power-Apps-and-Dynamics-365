@@ -1,8 +1,7 @@
 import {IInputs, IOutputs} from "./generated/ManifestTypes";
 
-export class SampleXrmControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+export class TestDelete implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 
-    private _container: HTMLDivElement;
     /**
      * Empty constructor.
      */
@@ -22,22 +21,6 @@ export class SampleXrmControl implements ComponentFramework.StandardControl<IInp
     public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container:HTMLDivElement): void
     {
         // Add control initialization code
-        const button: HTMLButtonElement = document.createElement("button");
-        button.innerHTML = "Click me";
-        button.onclick = () => {
-
-var Id = "da59721f-02b2-ea11-a812-000d3a1b14a2";
-context.webAPI.updateRecord("account", Id, { name: "Updated Account Name" }).then(
-    function success(result) {
-        console.log("Account name updated.");
-    },
-    function (error) {
-        console.log(error.message);
-    }
-);
-
-}
-        container.appendChild(button);
     }
 
 
@@ -48,7 +31,6 @@ context.webAPI.updateRecord("account", Id, { name: "Updated Account Name" }).the
     public updateView(context: ComponentFramework.Context<IInputs>): void
     {
         // Add code to update control view
-        //this._container.innerHTML = "Hello World";        
     }
 
     /**
